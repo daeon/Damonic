@@ -36,6 +36,8 @@ python release.py package
 
 On Windows activate with `.venv\Scripts\activate`. The source archive includes pinned symbol assets. A Git checkout downloads the pinned upstream archive on its first build and verifies its SHA-256 before use. The build uses `SOURCE_DATE_EPOCH=1788566400` unless overridden. Build twice in the same pinned environment and compare font/archive SHA-256 hashes.
 
+For production reports, install `requirements-qa.txt` and run `python scripts/production_report.py`. It records the documented alpha exceptions and fails on unexpected errors.
+
 `python release.py build` generates TTFs, the eight-face TTC, WOFF2, four UFO snapshots and the standalone preview. `package` produces binary and source ZIPs with normalized timestamps and a checksum manifest.
 
 ## Status and contributing

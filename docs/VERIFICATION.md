@@ -13,3 +13,5 @@ The PNG proofs use Pillow/FreeType. They are not evidence of native Windows/macO
 The Nerd edition passes the FontBakery OpenType profile with {'(not finished)': 0, 'INFO': 4, 'PASS': 114, 'SKIP': 65, 'WARN': 5}.
 
 A second build in a clean directory produced byte-identical results for all 17 font files (8 TTF, 8 WOFF2 and the TTC). See `reproducibility.json`.
+
+Repeated packaging also produced byte-identical binary and source ZIP archives before the final documentation update; ZIP timestamps and ordering are normalized.

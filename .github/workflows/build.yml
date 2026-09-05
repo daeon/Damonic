@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python -m pip install -r requirements.txt
+      - run: python -m pip install -r requirements-qa.txt
       - run: python release.py build
       - run: python tests/verify.py > docs/verification-report.json
       - name: Verify repeatable font bytes
@@ -24,6 +24,8 @@ jobs:
           sha256sum dist/*.ttf dist/*.ttc dist/*.woff2 > /tmp/first.sha256
           python release.py build
           sha256sum --check /tmp/first.sha256
+      - run: python scripts/production_report.py
+      - run: python scripts/proof.py
       - run: python release.py package
       - uses: actions/upload-artifact@v4
         with:
