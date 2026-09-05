@@ -1,0 +1,461 @@
+{
+  "checked_fonts": [
+    "Damonic-Regular.ttf",
+    "Damonic-Italic.ttf",
+    "Damonic-Bold.ttf",
+    "Damonic-BoldItalic.ttf"
+  ],
+  "checks": [
+    {
+      "detail": "['Damonic']",
+      "name": "family name",
+      "ok": true
+    },
+    {
+      "detail": "Regular",
+      "name": "style name",
+      "ok": true
+    },
+    {
+      "detail": "0.399993896484375",
+      "name": "revision 0.400",
+      "ok": true
+    },
+    {
+      "detail": "['Damonic-0.400-alpha-Regular']",
+      "name": "unique ID identifies Damonic style",
+      "ok": true
+    },
+    {
+      "detail": "0",
+      "name": "OS/2 fsType zero",
+      "ok": true
+    },
+    {
+      "detail": "DAMN",
+      "name": "vendor DAMN",
+      "ok": true
+    },
+    {
+      "detail": "{'fsSelection': 192, 'macStyle': 0}",
+      "name": "style linking flags",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "Latin1/Extended-A and quotes coverage",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "mapped glyphs nonempty (spaces exempt)",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "basic horizontal bounds",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "mapped advances 600 / marks 0",
+      "ok": true
+    },
+    {
+      "detail": "{'off': 1, 'on': 1}",
+      "name": "HarfBuzz ss01 on/off changes",
+      "ok": true
+    },
+    {
+      "detail": "{'off': 1, 'on': 1}",
+      "name": "HarfBuzz ss02 on/off changes",
+      "ok": true
+    },
+    {
+      "detail": "{'off': 2, 'on': 1}",
+      "name": "HarfBuzz dlig on/off changes",
+      "ok": true
+    },
+    {
+      "detail": "{'off': [(0, 0), (600, 0)], 'on': [(0, 0), (600, 406)]}",
+      "name": "stacked mark positioning",
+      "ok": true
+    },
+    {
+      "detail": "['mark', 'mkmk']",
+      "name": "GPOS mark and mkmk features",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "ASCII contours vs BearingMono-Regular.ttf",
+      "ok": true
+    },
+    {
+      "detail": "['Damonic']",
+      "name": "family name",
+      "ok": true
+    },
+    {
+      "detail": "Italic",
+      "name": "style name",
+      "ok": true
+    },
+    {
+      "detail": "0.399993896484375",
+      "name": "revision 0.400",
+      "ok": true
+    },
+    {
+      "detail": "['Damonic-0.400-alpha-Italic']",
+      "name": "unique ID identifies Damonic style",
+      "ok": true
+    },
+    {
+      "detail": "0",
+      "name": "OS/2 fsType zero",
+      "ok": true
+    },
+    {
+      "detail": "DAMN",
+      "name": "vendor DAMN",
+      "ok": true
+    },
+    {
+      "detail": "{'fsSelection': 129, 'macStyle': 2}",
+      "name": "style linking flags",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "Latin1/Extended-A and quotes coverage",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "mapped glyphs nonempty (spaces exempt)",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "basic horizontal bounds",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "mapped advances 600 / marks 0",
+      "ok": true
+    },
+    {
+      "detail": "{'off': 1, 'on': 1}",
+      "name": "HarfBuzz ss01 on/off changes",
+      "ok": true
+    },
+    {
+      "detail": "{'off': 1, 'on': 1}",
+      "name": "HarfBuzz ss02 on/off changes",
+      "ok": true
+    },
+    {
+      "detail": "{'off': 2, 'on': 1}",
+      "name": "HarfBuzz dlig on/off changes",
+      "ok": true
+    },
+    {
+      "detail": "{'off': [(0, 0), (600, 0)], 'on': [(0, 0), (600, 406)]}",
+      "name": "stacked mark positioning",
+      "ok": true
+    },
+    {
+      "detail": "['mark', 'mkmk']",
+      "name": "GPOS mark and mkmk features",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "ASCII contours vs BearingMono-Italic.ttf",
+      "ok": true
+    },
+    {
+      "detail": "['Damonic']",
+      "name": "family name",
+      "ok": true
+    },
+    {
+      "detail": "Bold",
+      "name": "style name",
+      "ok": true
+    },
+    {
+      "detail": "0.399993896484375",
+      "name": "revision 0.400",
+      "ok": true
+    },
+    {
+      "detail": "['Damonic-0.400-alpha-Bold']",
+      "name": "unique ID identifies Damonic style",
+      "ok": true
+    },
+    {
+      "detail": "0",
+      "name": "OS/2 fsType zero",
+      "ok": true
+    },
+    {
+      "detail": "DAMN",
+      "name": "vendor DAMN",
+      "ok": true
+    },
+    {
+      "detail": "{'fsSelection': 160, 'macStyle': 1}",
+      "name": "style linking flags",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "Latin1/Extended-A and quotes coverage",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "mapped glyphs nonempty (spaces exempt)",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "basic horizontal bounds",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "mapped advances 600 / marks 0",
+      "ok": true
+    },
+    {
+      "detail": "{'off': 1, 'on': 1}",
+      "name": "HarfBuzz ss01 on/off changes",
+      "ok": true
+    },
+    {
+      "detail": "{'off': 1, 'on': 1}",
+      "name": "HarfBuzz ss02 on/off changes",
+      "ok": true
+    },
+    {
+      "detail": "{'off': 2, 'on': 1}",
+      "name": "HarfBuzz dlig on/off changes",
+      "ok": true
+    },
+    {
+      "detail": "{'off': [(0, 0), (600, 0)], 'on': [(0, 0), (600, 411)]}",
+      "name": "stacked mark positioning",
+      "ok": true
+    },
+    {
+      "detail": "['mark', 'mkmk']",
+      "name": "GPOS mark and mkmk features",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "ASCII contours vs BearingMono-Bold.ttf",
+      "ok": true
+    },
+    {
+      "detail": "['Damonic']",
+      "name": "family name",
+      "ok": true
+    },
+    {
+      "detail": "BoldItalic",
+      "name": "style name",
+      "ok": true
+    },
+    {
+      "detail": "0.399993896484375",
+      "name": "revision 0.400",
+      "ok": true
+    },
+    {
+      "detail": "['Damonic-0.400-alpha-BoldItalic']",
+      "name": "unique ID identifies Damonic style",
+      "ok": true
+    },
+    {
+      "detail": "0",
+      "name": "OS/2 fsType zero",
+      "ok": true
+    },
+    {
+      "detail": "DAMN",
+      "name": "vendor DAMN",
+      "ok": true
+    },
+    {
+      "detail": "{'fsSelection': 161, 'macStyle': 3}",
+      "name": "style linking flags",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "Latin1/Extended-A and quotes coverage",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "mapped glyphs nonempty (spaces exempt)",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "basic horizontal bounds",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "mapped advances 600 / marks 0",
+      "ok": true
+    },
+    {
+      "detail": "{'off': 1, 'on': 1}",
+      "name": "HarfBuzz ss01 on/off changes",
+      "ok": true
+    },
+    {
+      "detail": "{'off': 1, 'on': 1}",
+      "name": "HarfBuzz ss02 on/off changes",
+      "ok": true
+    },
+    {
+      "detail": "{'off': 2, 'on': 1}",
+      "name": "HarfBuzz dlig on/off changes",
+      "ok": true
+    },
+    {
+      "detail": "{'off': [(0, 0), (600, 0)], 'on': [(0, 0), (600, 411)]}",
+      "name": "stacked mark positioning",
+      "ok": true
+    },
+    {
+      "detail": "['mark', 'mkmk']",
+      "name": "GPOS mark and mkmk features",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "ASCII contours vs BearingMono-BoldItalic.ttf",
+      "ok": true
+    },
+    {
+      "detail": "11397 mapped; reference 10624; missing 0",
+      "name": "Nerd Font full symbol cmap",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "Nerd mapped glyphs nonempty",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "Nerd bounds 0..600 / -250..1000",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "Nerd ASCII retention",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "Nerd mapped advances 600",
+      "ok": true
+    },
+    {
+      "detail": "11397 mapped; reference 10624; missing 0",
+      "name": "Nerd Font full symbol cmap",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "Nerd mapped glyphs nonempty",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "Nerd bounds 0..600 / -250..1000",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "Nerd ASCII retention",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "Nerd mapped advances 600",
+      "ok": true
+    },
+    {
+      "detail": "11397 mapped; reference 10624; missing 0",
+      "name": "Nerd Font full symbol cmap",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "Nerd mapped glyphs nonempty",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "Nerd bounds 0..600 / -250..1000",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "Nerd ASCII retention",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "Nerd mapped advances 600",
+      "ok": true
+    },
+    {
+      "detail": "11397 mapped; reference 10624; missing 0",
+      "name": "Nerd Font full symbol cmap",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "Nerd mapped glyphs nonempty",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "Nerd bounds 0..600 / -250..1000",
+      "ok": true
+    },
+    {
+      "detail": "",
+      "name": "Nerd ASCII retention",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "Nerd mapped advances 600",
+      "ok": true
+    },
+    {
+      "detail": "8",
+      "name": "TTC has eight faces",
+      "ok": true
+    },
+    {
+      "detail": "[{'family': 'Damonic', 'subfamily': 'Regular', 'ok': True}, {'family': 'Damonic', 'subfamily': 'Italic', 'ok': True}, {'family': 'Damonic', 'subfamily': 'Bold', 'ok': True}, {'family': 'Damonic', 'subfamily': 'Bold Italic', 'ok': True}, {'family': 'Damonic Nerd Font Mono', 'subfamily': 'Regular', 'ok': True}, {'family': 'Damonic Nerd Font Mono', 'subfamily': 'Italic', 'ok': True}, {'family': 'Damonic Nerd Font Mono', 'subfamily': 'Bold', 'ok': True}, {'family': 'Damonic Nerd Font Mono', 'subfamily': 'Bold Italic', 'ok': True}]",
+      "name": "TTC exact family/style faces and matching TTF tables",
+      "ok": true
+    }
+  ],
+  "ok": true
+}

@@ -1,0 +1,48 @@
+name: Build and verify Damonic
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: python release.py build
+      - run: python tests/verify.py > docs/verification-report.json
+      - name: Verify repeatable font bytes
+        run: |
+          sha256sum dist/*.ttf dist/*.ttc dist/*.woff2 > /tmp/first.sha256
+          python release.py build
+          sha256sum --check /tmp/first.sha256
+      - run: python release.py package
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Damonic-alpha
+          path: |
+            Damonic-*.zip
+            docs/verification-report.json
+      - name: Publish alpha download
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v0.4.0-alpha
+          name: Damonic 0.4.0 Alpha
+          prerelease: true
+          body: |
+            Eight static faces in one Damonic.ttc collection, plus TTF fallbacks.
+            Includes all 10,624 mapped codepoints from Nerd Fonts 3.5.1.
+            Alpha: native platform testing, hinting review and developer beta remain.
+          files: |
+            dist/Damonic.ttc
+            Damonic-0.4.0-alpha.zip
+            Damonic-0.4.0-alpha-Source.zip

@@ -1,0 +1,27 @@
+{
+  "nerd_fonts_version": "3.5.1",
+  "source_url": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/NerdFontsSymbolsOnly.zip",
+  "archive_sha256": "fdca3682534f6f65e1ccb2345b0362ccf67d9b8eca7c8025330946e93e2473bc",
+  "notices": {
+    "ICON-SOURCES.md": "63d977d4f891bb70c1af3524d5b9e67ae1da10bc9ac076848b47ad7abad643f2",
+    "codicons.txt": "af5e030844efddbc7ab00dcfea8b019703753d4d9f5172d727c533a492aec665",
+    "devicons.txt": "121194741d4a915b9f5890fdd6dd95121f9b1f816517c792358d72d7c838d664",
+    "font-logos.txt": "e6e0a1eaa75cfd718fc7b1615631b45a00564e4e7b1afbaf770eae38acfc31a0",
+    "fontawesome.txt": "0aa8f86525273b2efa4f40f4272a188e187704252170e979dc06879adf68d43c",
+    "fontawesomeextension.txt": "b1017ff37634f4f03f99a01480b5bd11f3268d6adc8dd447ee1ad2e3fec756e1",
+    "hack.txt": "1f61bb7c790c59b4b0ecdf304628b94e42ae4c8020094a8c3da73381ab212623",
+    "materialdesign.txt": "3bae6305bcaa6d10219b999f65c342034c2d40b1c0e8567fa08605e73ccba829",
+    "nerd-fonts-symbols-only-MIT.txt": "84a7a98c82140fb12c37fe42b93805baa16024cb3e5acc599b7ffe612c55d847",
+    "nerd-fonts-symbols-only-NOTICE.md": "a4463554f951c8153d0bdfcb6e03b382baf99dcdd3f99790014427687abdc55b",
+    "octicons.txt": "da259c8bd0de62713ccdcf88910aebca810644f98c2c912bad814fc79ea778df",
+    "pomicons.txt": "903d1c9ba1625ec5dc8fdfd314820fddc670d7b9b75d1bb7fbd9c7bb60bc9e4b",
+    "power-symbols-iec.txt": "9522d60e297b626c2fc0aae45a81f4c248e3ed89380f103751f9d84a4a56b1b0",
+    "powerline-extra.txt": "544307a58e6826c24145b2af1c3578b53e2e21ae0e6c67ab4c6abd544304d26a",
+    "powerline.txt": "46d5355e4734468135d8e4a30d0916292cc4df2b3ec30aa68c866f82497933be",
+    "remaining-upstream-notices.txt": "ee361a841e877130b642187d1f4ab5d7db44c362868a6b53ba1212816bce7ce8",
+    "seti.txt": "26d0c357bea22a5750148415be6ff27afb527d40c5594568ce7acf539554e16e",
+    "weather-icons.txt": "45ea2dcc3ef76eaa0272013397082bbc9ba975cfd9e45e84595c87741d0c606d"
+  },
+  "packaging": "release.py includes every licenses/ file in both binary and source archives",
+  "original_font_license": "OFL-1.1; Bearing Mono attribution retained; no Damonic Reserved Font Name declared"
+}

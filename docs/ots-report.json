@@ -1,0 +1,42 @@
+[
+  {
+    "file": "Damonic-Bold.ttf",
+    "returncode": 0,
+    "output": "File sanitized successfully!\n"
+  },
+  {
+    "file": "Damonic-BoldItalic.ttf",
+    "returncode": 0,
+    "output": "File sanitized successfully!\n"
+  },
+  {
+    "file": "Damonic-Italic.ttf",
+    "returncode": 0,
+    "output": "File sanitized successfully!\n"
+  },
+  {
+    "file": "Damonic-Regular.ttf",
+    "returncode": 0,
+    "output": "File sanitized successfully!\n"
+  },
+  {
+    "file": "DamonicNerdFontMono-Bold.ttf",
+    "returncode": 0,
+    "output": "File sanitized successfully!\n"
+  },
+  {
+    "file": "DamonicNerdFontMono-BoldItalic.ttf",
+    "returncode": 0,
+    "output": "File sanitized successfully!\n"
+  },
+  {
+    "file": "DamonicNerdFontMono-Italic.ttf",
+    "returncode": 0,
+    "output": "File sanitized successfully!\n"
+  },
+  {
+    "file": "DamonicNerdFontMono-Regular.ttf",
+    "returncode": 0,
+    "output": "File sanitized successfully!\n"
+  }
+]

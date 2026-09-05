@@ -1,0 +1,8 @@
+Pomicons — OFL 1.1 with Reserved Font Name; upstream: https://github.com/gabrielelana/pomicons
+Seti UI and original — MIT; upstream: https://github.com/jesseweed/seti-ui
+Power Symbols IEC — MIT; upstream: https://github.com/jloughry/Unicode
+Weather Icons — SIL OFL 1.1; upstream: https://github.com/erikflowers/weather-icons
+
+These notices supplement the complete upstream license files shipped in the pinned
+Nerd Fonts SymbolsOnly archive (LICENSE and README.md). The archive is the build
+input and is verified by SHA-256 in patch_nerd.py.

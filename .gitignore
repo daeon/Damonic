@@ -1,0 +1,11 @@
+__pycache__/
+.venv/
+*.pyc
+Damonic-*.zip
+dist/
+interchange/
+vendor/
+Damonic-Preview.html
+SHA256SUMS.txt
+containment-*.json
+buildmanifest.json
