@@ -119,6 +119,9 @@ def merge(base_path, out_path, symbol_path, manifest_path):
 
 def _extract_symbol(archive):
  with zipfile.ZipFile(archive) as z: data=z.read(SYMBOL_FONT)
+ reference=Path(archive).parent/'symbols-src'/SYMBOL_FONT
+ reference.parent.mkdir(parents=True,exist_ok=True)
+ reference.write_bytes(data)
  fd,tmp=tempfile.mkstemp(suffix='.ttf'); os.close(fd); Path(tmp).write_bytes(data); return Path(tmp)
 
 def main():
