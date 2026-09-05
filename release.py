@@ -85,15 +85,20 @@ def build():
     print('Built eight faces, TTC, WOFF2, UFO snapshots and preview.')
 
 def zip_files(output, paths):
-    with zipfile.ZipFile(output,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as archive:
+    temporary=output.with_suffix('.zip.tmp')
+    with zipfile.ZipFile(temporary,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as archive:
         for path in sorted(paths):
             entry=zipfile.ZipInfo('Damonic/'+path.relative_to(ROOT).as_posix(), (2026,9,5,0,0,0))
             entry.compress_type=zipfile.ZIP_DEFLATED
             entry.external_attr=0o100644 << 16
             archive.writestr(entry,path.read_bytes(),compresslevel=9)
+    with zipfile.ZipFile(temporary) as archive:
+        if archive.testzip() is not None:
+            raise RuntimeError('Archive integrity check failed')
+    os.replace(temporary,output)
 
 def package():
-    paths=[p for p in ROOT.rglob('*') if p.is_file() and not any((x.startswith('.') and x not in ('.github','.gitignore')) or x=='__pycache__' for x in p.relative_to(ROOT).parts) and p.suffix not in ('.zip','.pyc') and p.name!='SHA256SUMS.txt']
+    paths=[p for p in ROOT.rglob('*') if p.is_file() and not any((x.startswith('.') and x not in ('.github','.gitignore')) or x=='__pycache__' for x in p.relative_to(ROOT).parts) and p.suffix not in ('.zip','.pyc','.tmp') and p.name!='SHA256SUMS.txt']
     # Vendor ZIP files are pinned inputs and belong in the source release.
     paths += list((ROOT/'vendor').rglob('*.zip'))
     checksum=ROOT/'SHA256SUMS.txt'
