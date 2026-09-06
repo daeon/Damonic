@@ -30,8 +30,14 @@ def italic_specs(D, existing):
         'e': ['M120 264 L466 291 C465 426 407 501 297 501 C175 501 117 404 117 263 C117 112 187 29 304 29 C379 29 433 59 467 110'],
         # f gains an independently placed arch; no clipped ascender terminal.
         'f': ['M155 -190 C215 -173 245 -112 245 -26 L245 544 C245 656 286 706 358 706 C397 706 421 696 445 679', 'M113 491 L455 491'],
-        'i': ['M75 474 L236 491 L236 153 C236 73 263 39 320 39 L465 39', 'M236 658 L236 735'],
-        'l': ['M232 735 L232 147 C232 72 259 39 322 39 L416 39'],
+        # Extend the italic exits to keep ``ir``/``in`` from opening up after
+        # the slanted stem. This is an outline change: the terminal is longer
+        # and flatter, while the stem and 600-unit cell remain unchanged.
+        'i': ['M75 474 L236 491 L236 153 C236 73 263 39 320 39 L510 39', 'M236 658 L236 735'],
+        # The tall l has the same optical correction at its baseline exit; its
+        # broad terminal gives ``lr`` a usable rhythm without translating the
+        # narrow stem inside its cell.
+        'l': ['M232 735 L232 147 C232 72 259 39 322 39 L500 39'],
         't': ['M241 683 L241 163 C241 69 278 29 348 29 C387 29 428 41 457 65', 'M112 491 L449 491'],
         # Cap tops are narrower than baseline; these are redrawn polygon systems.
         'M': ['M104 0 L96 710 L120 710 L300 281 L427 710 L451 710 L507 0'],

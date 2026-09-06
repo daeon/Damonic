@@ -8,6 +8,17 @@ def feature_text(accents, name, cmap, glyphs):
         # Accent outlines are translated -600; -300 centers their local anchor
         # and causes a +600 attachment shift over the base anchor at x=300.
         fea += f'markClass {name(cp)} <anchor -300 {0 if cls=="@BOTTOM" else 580}> {cls};\n'
+    # Unicode's soft-dotted rule removes the native dot when an above mark is
+    # present.  Use a mark filter so a below mark (for example ogonek) may sit
+    # between the base and the above mark without preventing the substitution.
+    # The dotless glyphs are emitted before this feature is assembled.
+    fea += 'feature ccmp {\n'
+    fea += ' lookup soft_dot_suppression {\n'
+    fea += '  lookupflag UseMarkFilteringSet @TOP;\n'
+    fea += f'  sub {name(ord("i"))}\' @TOP by {name(0x131)};\n'
+    fea += f'  sub {name(ord("j"))}\' @TOP by {name(0x237)};\n'
+    fea += ' } soft_dot_suppression;\n'
+    fea += '} ccmp;\n'
     fea += 'feature mark {\n'
     for cp,nm in sorted(cmap.items()):
         cat=unicodedata.category(chr(cp))

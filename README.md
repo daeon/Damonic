@@ -6,15 +6,15 @@
 
 An original open-source coding typeface with four styles, a complete Nerd Fonts Mono edition, and one eight-face collection.
 
-**[Download the free alpha](https://github.com/daeon/Damonic/releases/tag/v0.4.0-alpha)** · [Explore the marketing kit](marketing/README.md) · [View the specimen](marketing/assets/damonic-specimen.svg)
+**[Download the free alpha](https://github.com/daeon/Damonic/releases/tag/v0.4.1-alpha)** · [Explore the marketing kit](marketing/README.md) · [View the specimen](marketing/assets/damonic-specimen.svg)
 
 - **Your editor, your style:** Regular, Italic, Bold and Bold Italic.
 - **Your terminal, with icons:** complete Nerd Fonts 3.5.1 mappings in the Mono edition.
 - **Your setup, your choice:** optional operator ligatures, dotted zero and simple lowercase l.
 
-> **Alpha 0.4.0:** ready for hands-on evaluation. Native-platform testing, hinting review and final optical polish remain before 1.0.
+> **Alpha 0.4.1:** ready for hands-on evaluation. Native-platform testing, hinting review and final optical polish remain before 1.0.
 
-An original humanist monospace for coding and terminal work. **0.4.0 Alpha** develops the Bearing Mono 0.3.4 design under its new name, Damonic. Fira Code, Source Code Pro and Consolas informed the brief; their outlines were not used. Existing ASCII drawings and spacing are preserved in this engineering release.
+An original humanist monospace for coding and terminal work. **0.4.1 Alpha** develops the Bearing Mono 0.3.4 design under its new name, Damonic. Fira Code, Source Code Pro and Consolas informed the brief; their outlines were not used. This optical revision refines the narrow-letter rhythm; the original 0.4.0 engineering release preserved the 0.3.4 ASCII drawings.
 
 ## Install
 
@@ -43,6 +43,7 @@ python -m venv .venv
 python -m pip install -r requirements.txt
 python release.py build
 python tests/verify.py
+python tests/soft_dots.py
 python release.py package
 ```
 
@@ -51,6 +52,10 @@ On Windows activate with `.venv\Scripts\activate`. The source archive includes p
 For production reports, install `requirements-qa.txt` and run `python scripts/production_report.py`. It records the documented alpha exceptions and fails on unexpected errors.
 
 `python release.py build` generates TTFs, the eight-face TTC, WOFF2, four UFO snapshots and the standalone preview. `package` produces binary and source ZIPs with normalized timestamps and a checksum manifest.
+
+## Optical proofs
+
+Run `python scripts/optical_proof.py --after dist --out docs/optical-proof.png` for the four-style, light/dark size matrix. Add `--before /path/to/previous/dist --overview docs/optical-overview.png` to compare versions. These are actual FreeType rasterizations; native-platform evaluation remains required. See `docs/OPTICAL-REVIEW.md` for the latest assessment.
 
 ## Status and contributing
 

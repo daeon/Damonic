@@ -21,6 +21,7 @@ jobs:
       - run: |
           set -o pipefail
           python tests/verify.py | tee docs/verification-report.json
+      - run: python tests/soft_dots.py
       - name: Verify repeatable font bytes
         run: |
           sha256sum dist/*.ttf dist/*.ttc dist/*.woff2 > /tmp/first.sha256
@@ -39,8 +40,8 @@ jobs:
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v0.4.0-alpha
-          name: Damonic 0.4.0 Alpha
+          tag_name: v0.4.1-alpha
+          name: Damonic 0.4.1 Alpha
           prerelease: true
           body: |
             Eight static faces in one Damonic.ttc collection, plus TTF fallbacks.
@@ -48,5 +49,5 @@ jobs:
             Alpha: native platform testing, hinting review and developer beta remain.
           files: |
             dist/Damonic.ttc
-            Damonic-0.4.0-alpha.zip
-            Damonic-0.4.0-alpha-Source.zip
+            Damonic-0.4.1-alpha.zip
+            Damonic-0.4.1-alpha-Source.zip

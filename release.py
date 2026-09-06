@@ -7,7 +7,7 @@ import ufoLib2
 
 ROOT = Path(__file__).resolve().parent
 STYLES = ('Regular', 'Italic', 'Bold', 'BoldItalic')
-VERSION = '0.4.0-alpha'
+VERSION = '0.4.1-alpha'
 os.environ.setdefault('SOURCE_DATE_EPOCH', '1788566400')
 
 def run(*args):
@@ -27,7 +27,7 @@ def export_ufo(path):
     info.ascender, info.descender = 1000, -250
     info.xHeight, info.capHeight = 530, 710
     info.italicAngle = font['post'].italicAngle
-    info.versionMajor, info.versionMinor = 0, 400
+    info.versionMajor, info.versionMinor = 0, 401
     info.copyright = font['name'].getDebugName(0)
     info.openTypeOS2WeightClass = font['OS/2'].usWeightClass
     glyphset = font.getGlyphSet()
@@ -60,10 +60,10 @@ def preview():
         data = base64.b64encode(path.with_suffix('.woff2').read_bytes()).decode()
         faces.append(f"@font-face{{font-family:'{key}';src:url(data:font/woff2;base64,{data}) format('woff2')}}")
         cards.append(f'<section><h2>{family} · {style}</h2><pre class="sample" style="font-family:{key}"></pre></section>')
-    doc = '''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Damonic 0.4.0 Alpha</title><style>
+    doc = '''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Damonic 0.4.1 Alpha</title><style>
     FACES
     :root{color-scheme:light;--bg:#f4f2eb;--ink:#22332e;--line:#b8c3bb;--panel:#fffdf7}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,sans-serif}main{max-width:1100px;margin:auto;padding:clamp(20px,5vw,70px)}h1{font:clamp(40px,8vw,78px)/1.2 Damonic-Regular;margin:18px 0}h2{font-size:15px;font-weight:600}small{letter-spacing:.12em}p{max-width:720px}header{padding-bottom:32px;border-bottom:1px solid var(--line)}.controls{display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin:28px 0}button{padding:10px 20px;background:var(--ink);color:var(--bg);border:0;border-radius:5px;cursor:pointer}textarea{width:100%;min-height:220px;padding:20px;font:16px/1.5 Damonic-Regular;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:6px}section{margin-top:35px;padding-top:20px;border-top:1px solid var(--line)}pre{overflow:auto;line-height:1.6;font-size:var(--size,16px);padding:20px;background:var(--panel);border-radius:6px}.muted{font-size:14px;opacity:.8}body.dark{color-scheme:dark;--bg:#14231f;--ink:#e2ebe4;--line:#4b6257;--panel:#1c2e27}.icons{font:26px/2 DamonicNerdFontMono-Regular;word-break:break-all}
-    </style><main><header><small>ORIGINAL CODING TYPEFACE / 0.4.0 ALPHA</small><h1>Damonic</h1><p>Eight faces. One collection. An original monospace with a complete Nerd Fonts Mono edition. Inspect the actual embedded fonts at working sizes.</p><p class="muted">The TTC contains discrete styles. Native terminal and platform testing remains part of the road to 1.0.</p></header><div class="controls"><label>Size <input id="size" type="range" min="10" max="32" value="16"> <output id="sizeValue">16 px</output></label><label><input type="checkbox" id="dlig"> Operator ligatures</label><label><input type="checkbox" id="ss01"> Dotted zero</label><label><input type="checkbox" id="ss02"> Simple l</label><button id="theme">Toggle theme</button></div><label for="text">Shared specimen text</label><textarea id="text" spellcheck="false"></textarea>CARDS<section><h2>Nerd Fonts symbol sample</h2><p class="muted">These are a sample; the included coverage manifest verifies the complete upstream mapping.</p><div class="icons">&#xf015; &#xf07b; &#xf013; &#xf120; &#xe0b0; &#xe0b2; &#xe0a0; &#xe725; &#xe73c; &#xf121; &#xf09b; &#xf17c; &#xf179; &#xf17a;</div></section></main><script>
+    </style><main><header><small>ORIGINAL CODING TYPEFACE / 0.4.1 ALPHA</small><h1>Damonic</h1><p>Eight faces. One collection. An original monospace with a complete Nerd Fonts Mono edition. Inspect the actual embedded fonts at working sizes.</p><p class="muted">The TTC contains discrete styles. Native terminal and platform testing remains part of the road to 1.0.</p></header><div class="controls"><label>Size <input id="size" type="range" min="10" max="32" value="16"> <output id="sizeValue">16 px</output></label><label><input type="checkbox" id="dlig"> Operator ligatures</label><label><input type="checkbox" id="ss01"> Dotted zero</label><label><input type="checkbox" id="ss02"> Simple l</label><button id="theme">Toggle theme</button></div><label for="text">Shared specimen text</label><textarea id="text" spellcheck="false"></textarea>CARDS<section><h2>Nerd Fonts symbol sample</h2><p class="muted">These are a sample; the included coverage manifest verifies the complete upstream mapping.</p><div class="icons">&#xf015; &#xf07b; &#xf013; &#xf120; &#xe0b0; &#xe0b2; &#xe0a0; &#xe725; &#xe73c; &#xf121; &#xf09b; &#xf17c; &#xf179; &#xf17a;</div></section></main><script>
     const input=document.getElementById('text');input.value='printing minimum string return\\nri ir in ni rn nr rim ring bring\\nIl1|! O0o {} [] () 0123456789\\nÀéñö Đđ Œœ Łł ß “quotes”\\n// Damonic: clear code and quiet rhythm.\\nfunction scan(input) {\\n  if (input.length >= 10 && input[0] != 0) {\\n    return count(input);\\n  }\\n}\\n┌────────────┐\\n│ ~/projects │\\n└────────────┘';
     function update(){document.querySelectorAll('.sample').forEach(el=>el.textContent=input.value);document.documentElement.style.setProperty('--size',document.getElementById('size').value+'px');document.getElementById('sizeValue').value=document.getElementById('size').value+' px';const features=['dlig','ss01','ss02'].map(id=>'"'+id+'" '+(document.getElementById(id).checked?1:0)).join(',');document.querySelectorAll('.sample,textarea').forEach(el=>el.style.fontFeatureSettings=features)}document.querySelectorAll('input,textarea').forEach(el=>el.addEventListener('input',update));document.getElementById('theme').onclick=()=>document.body.classList.toggle('dark');update();
     </script></html>'''

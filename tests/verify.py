@@ -35,7 +35,7 @@ def check_font(path):
     bold, italic = STYLES.get(style, (None, None))
     out.append(result("family name", "Damonic" in (names(font,16)|names(font,1)), sorted(names(font,1)|names(font,16))))
     out.append(result("style name", style in STYLES, style))
-    out.append(result("revision 0.400", abs(font["head"].fontRevision-.400) < 1/65536, font["head"].fontRevision))
+    out.append(result("revision 0.401", abs(font["head"].fontRevision-.401) < 1/65536, font["head"].fontRevision))
     uid = names(font,3)
     out.append(result("unique ID identifies Damonic style", any("Damonic" in x and style in x for x in uid), sorted(uid)))
     out.append(result("OS/2 fsType zero", font["OS/2"].fsType == 0, font["OS/2"].fsType))

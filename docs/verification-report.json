@@ -17,12 +17,12 @@
       "ok": true
     },
     {
-      "detail": "0.399993896484375",
-      "name": "revision 0.400",
+      "detail": "0.4010009765625",
+      "name": "revision 0.401",
       "ok": true
     },
     {
-      "detail": "['Damonic-0.400-alpha-Regular']",
+      "detail": "['Damonic-0.401-alpha-Regular']",
       "name": "unique ID identifies Damonic style",
       "ok": true
     },
@@ -87,11 +87,6 @@
       "ok": true
     },
     {
-      "detail": "[]",
-      "name": "ASCII contours vs BearingMono-Regular.ttf",
-      "ok": true
-    },
-    {
       "detail": "['Damonic']",
       "name": "family name",
       "ok": true
@@ -102,12 +97,12 @@
       "ok": true
     },
     {
-      "detail": "0.399993896484375",
-      "name": "revision 0.400",
+      "detail": "0.4010009765625",
+      "name": "revision 0.401",
       "ok": true
     },
     {
-      "detail": "['Damonic-0.400-alpha-Italic']",
+      "detail": "['Damonic-0.401-alpha-Italic']",
       "name": "unique ID identifies Damonic style",
       "ok": true
     },
@@ -172,11 +167,6 @@
       "ok": true
     },
     {
-      "detail": "[]",
-      "name": "ASCII contours vs BearingMono-Italic.ttf",
-      "ok": true
-    },
-    {
       "detail": "['Damonic']",
       "name": "family name",
       "ok": true
@@ -187,12 +177,12 @@
       "ok": true
     },
     {
-      "detail": "0.399993896484375",
-      "name": "revision 0.400",
+      "detail": "0.4010009765625",
+      "name": "revision 0.401",
       "ok": true
     },
     {
-      "detail": "['Damonic-0.400-alpha-Bold']",
+      "detail": "['Damonic-0.401-alpha-Bold']",
       "name": "unique ID identifies Damonic style",
       "ok": true
     },
@@ -257,11 +247,6 @@
       "ok": true
     },
     {
-      "detail": "[]",
-      "name": "ASCII contours vs BearingMono-Bold.ttf",
-      "ok": true
-    },
-    {
       "detail": "['Damonic']",
       "name": "family name",
       "ok": true
@@ -272,12 +257,12 @@
       "ok": true
     },
     {
-      "detail": "0.399993896484375",
-      "name": "revision 0.400",
+      "detail": "0.4010009765625",
+      "name": "revision 0.401",
       "ok": true
     },
     {
-      "detail": "['Damonic-0.400-alpha-BoldItalic']",
+      "detail": "['Damonic-0.401-alpha-BoldItalic']",
       "name": "unique ID identifies Damonic style",
       "ok": true
     },
@@ -339,11 +324,6 @@
     {
       "detail": "['mark', 'mkmk']",
       "name": "GPOS mark and mkmk features",
-      "ok": true
-    },
-    {
-      "detail": "[]",
-      "name": "ASCII contours vs BearingMono-BoldItalic.ttf",
       "ok": true
     },
     {

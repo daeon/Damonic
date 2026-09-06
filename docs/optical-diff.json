@@ -1,0 +1,56 @@
+[
+  {
+    "style": "Regular",
+    "changed_contours": [],
+    "advance_changes": [],
+    "cmap_unchanged": true
+  },
+  {
+    "style": "Italic",
+    "changed_contours": [
+      "U+0069 i",
+      "U+006C l",
+      "U+00EC ì",
+      "U+00ED í",
+      "U+00EE î",
+      "U+00EF ï",
+      "U+0129 ĩ",
+      "U+012B ī",
+      "U+012D ĭ",
+      "U+012F į",
+      "U+0131 ı",
+      "U+013A ĺ",
+      "U+013C ļ",
+      "U+013E ľ"
+    ],
+    "advance_changes": [],
+    "cmap_unchanged": true
+  },
+  {
+    "style": "Bold",
+    "changed_contours": [],
+    "advance_changes": [],
+    "cmap_unchanged": true
+  },
+  {
+    "style": "BoldItalic",
+    "changed_contours": [
+      "U+0069 i",
+      "U+006C l",
+      "U+00EC ì",
+      "U+00ED í",
+      "U+00EE î",
+      "U+00EF ï",
+      "U+0129 ĩ",
+      "U+012B ī",
+      "U+012D ĭ",
+      "U+012F į",
+      "U+0131 ı",
+      "U+013A ĺ",
+      "U+013C ļ",
+      "U+013E ľ"
+    ],
+    "advance_changes": [],
+    "cmap_unchanged": true
+  }
+]

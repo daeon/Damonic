@@ -327,12 +327,12 @@ def build(style):
   if g.numberOfContours: g.recalcBounds(None);metrics[nm]=(metrics[nm][0],g.xMin)
  fb=FontBuilder(1000,isTTF=True);fb.setupGlyphOrder(order);fb.setupCharacterMap(cmap);fb.setupGlyf(glyphs)
  fb.setupHorizontalMetrics(metrics);fb.setupHorizontalHeader(ascent=1000,descent=-250,lineGap=0,caretSlopeRise=1000 if ital else 1,caretSlopeRun=158 if ital else 0)
- fb.setupNameTable({'familyName':'Damonic','styleName':style,'uniqueFontIdentifier':f'Damonic-0.400-alpha-{style.replace(" ","") }','fullName':f'Damonic {style}','psName':f'Damonic-{style.replace(" ","") }','version':'Version 0.400 alpha','copyright':'Copyright 2026 Damonic contributors. Original outlines.','manufacturer':'Damonic Project','vendorURL':'https://openfontlicense.org/','designer':'Damonic Project','description':'Original humanist monospaced coding and terminal typeface. Version 0.400 alpha.','licenseDescription':'SIL Open Font License, Version 1.1','licenseInfoURL':'https://openfontlicense.org/','typographicFamily':'Damonic','typographicSubfamily':style})
+ fb.setupNameTable({'familyName':'Damonic','styleName':style,'uniqueFontIdentifier':f'Damonic-0.401-alpha-{style.replace(" ","") }','fullName':f'Damonic {style}','psName':f'Damonic-{style.replace(" ","") }','version':'Version 0.401 alpha','copyright':'Copyright 2026 Damonic contributors. Original outlines.','manufacturer':'Damonic Project','vendorURL':'https://openfontlicense.org/','designer':'Damonic Project','description':'Original humanist monospaced coding and terminal typeface. Version 0.401 alpha.','licenseDescription':'SIL Open Font License, Version 1.1','licenseInfoURL':'https://openfontlicense.org/','typographicFamily':'Damonic','typographicSubfamily':style})
  fs=(1 if ital else 0)|(32 if bold else 0)|(64 if not ital and not bold else 0)|128
  fb.setupOS2(version=4,sTypoAscender=1000,sTypoDescender=-250,sTypoLineGap=0,usWinAscent=1000,usWinDescent=250,usWeightClass=700 if bold else 400,usWidthClass=5,fsSelection=fs,sxHeight=530,sCapHeight=710,yStrikeoutPosition=280,yStrikeoutSize=50)
  fb.font['OS/2'].recalcCodePageRanges(fb.font)
  fb.setupPost(isFixedPitch=1,italicAngle=-9 if ital else 0,underlinePosition=-120,underlineThickness=50)
- fb.setupMaxp();fb.font['head'].fontRevision=0.4;fb.font['head'].macStyle=(1 if bold else 0)|(2 if ital else 0)
+ fb.setupMaxp();fb.font['head'].fontRevision=0.401;fb.font['head'].macStyle=(1 if bold else 0)|(2 if ital else 0)
  fb.font['OS/2'].achVendID='DAMN';fb.font['OS/2'].fsType=0
  fb.font['OS/2'].panose.bFamilyType=2;fb.font['OS/2'].panose.bProportion=9
  fea='languagesystem DFLT dflt;\nlanguagesystem latn dflt;\n'
