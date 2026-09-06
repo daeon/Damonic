@@ -2,7 +2,7 @@
 
 Experimental **Regular** package of the R5 drawing selected in the design conversation. This is a separate family named **Damonic R5 Study**. It does not replace Damonic 0.4.2, its four styles, or its Nerd edition.
 
-[Build status](https://github.com/daeon/Damonic/actions?query=branch%3Ar5-coherent-flow) · [Releases](https://github.com/daeon/Damonic/releases) · [Packaging review](PACKAGING-REVIEW.md)
+[Build status](https://github.com/daeon/Damonic/actions?query=branch%3Ar5-coherent-flow) · [Releases](https://github.com/daeon/Damonic/releases) · [Packaging review](https://github.com/daeon/Damonic/blob/r5-coherent-flow/studies/r5/PACKAGING-REVIEW.md)
 
 A successful study build publishes the isolated prerelease tag `r5-study-0.5.0-alpha.5`. The existing production release is not replaced.
 
