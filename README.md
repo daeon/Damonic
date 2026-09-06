@@ -1,6 +1,18 @@
 # Damonic
 
-[Download the alpha](https://github.com/daeon/Damonic/releases/tag/v0.4.0-alpha).
+![Damonic — Make room for the code. Four styles, one collection, complete Nerd Fonts edition.](marketing/assets/damonic-hero.svg)
+
+**Make room for the code.**
+
+An original open-source coding typeface with four styles, a complete Nerd Fonts Mono edition, and one eight-face collection.
+
+**[Download the free alpha](https://github.com/daeon/Damonic/releases/tag/v0.4.0-alpha)** · [Explore the marketing kit](marketing/README.md) · [View the specimen](marketing/assets/damonic-specimen.svg)
+
+- **Your editor, your style:** Regular, Italic, Bold and Bold Italic.
+- **Your terminal, with icons:** complete Nerd Fonts 3.5.1 mappings in the Mono edition.
+- **Your setup, your choice:** optional operator ligatures, dotted zero and simple lowercase l.
+
+> **Alpha 0.4.0:** ready for hands-on evaluation. Native-platform testing, hinting review and final optical polish remain before 1.0.
 
 An original humanist monospace for coding and terminal work. **0.4.0 Alpha** develops the Bearing Mono 0.3.4 design under its new name, Damonic. Fira Code, Source Code Pro and Consolas informed the brief; their outlines were not used. Existing ASCII drawings and spacing are preserved in this engineering release.
 
