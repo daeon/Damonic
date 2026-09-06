@@ -2,6 +2,10 @@
 
 Experimental **Regular** package of the R5 drawing selected in the design conversation. This is a separate family named **Damonic R5 Study**. It does not replace Damonic 0.4.2, its four styles, or its Nerd edition.
 
+[Build status](https://github.com/daeon/Damonic/actions?query=branch%3Ar5-coherent-flow) · [Releases](https://github.com/daeon/Damonic/releases) · [Packaging review](PACKAGING-REVIEW.md)
+
+A successful study build publishes the isolated prerelease tag `r5-study-0.5.0-alpha.5`. The existing production release is not replaced.
+
 R5 keeps the roundness, stronger main stems and wider `i` developed in R2–R4. Its last aesthetic pass refined `a`, `e`, `g` and `s`. Packaging does not redraw the letters or fill missing characters from a different font.
 
 ## Scope — read before installing
@@ -22,7 +26,7 @@ Install only the TTF through your operating system's font manager, restart the a
 
 ## Rebuild
 
-Use Python 3.12 or newer in a virtual environment:
+Use Python 3.13 in a virtual environment, matching the CI build:
 
 ```sh
 python -m pip install -r studies/r5/requirements.txt
@@ -32,7 +36,7 @@ python studies/r5/build.py --out .build/r5 --package
 
 Use an empty output directory. From the extracted source archive, omit `studies/r5/` from these commands. The archive includes an ordinary, editable `R5-outlines.json` and its OFL license.
 
-In the repository, `R5-outlines.json.xz` is the lossless compressed original source snapshot, not a compiled font. Extract it without installing any font software:
+In the repository, `R5-outlines.json.xz` is the lossless compressed original source snapshot, not a compiled font. After installing the build dependencies, extract it without installing the study into your operating system:
 
 ```sh
 python studies/r5/build.py --extract-source R5-editable.json
