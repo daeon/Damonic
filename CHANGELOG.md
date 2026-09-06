@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.2 Alpha
+- Preserve the user-selected candidate M (0.4.1) direction.
+- Slightly strengthen Regular m stems from 74% to 78% of the nominal stroke, preserving its shoulder geometry and fixed advance.
+- Retain Bold, Italic and Bold Italic outlines, all i/r positions, and the existing feature set.
+- Rebuild both families and the eight-face collection; add the frozen M comparison proof.
+
 ## 0.4.1 Alpha
 - Extend italic i/l baseline exits to reduce the white interval before following letters, with unchanged 600-unit advances.
 - Suppress native i/j dots before supported combining top marks, including after intervening below marks.

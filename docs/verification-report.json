@@ -17,12 +17,12 @@
       "ok": true
     },
     {
-      "detail": "0.4010009765625",
-      "name": "revision 0.401",
+      "detail": "0.4019927978515625",
+      "name": "revision 0.402",
       "ok": true
     },
     {
-      "detail": "['Damonic-0.401-alpha-Regular']",
+      "detail": "['Damonic-0.402-alpha-Regular']",
       "name": "unique ID identifies Damonic style",
       "ok": true
     },
@@ -97,12 +97,12 @@
       "ok": true
     },
     {
-      "detail": "0.4010009765625",
-      "name": "revision 0.401",
+      "detail": "0.4019927978515625",
+      "name": "revision 0.402",
       "ok": true
     },
     {
-      "detail": "['Damonic-0.401-alpha-Italic']",
+      "detail": "['Damonic-0.402-alpha-Italic']",
       "name": "unique ID identifies Damonic style",
       "ok": true
     },
@@ -177,12 +177,12 @@
       "ok": true
     },
     {
-      "detail": "0.4010009765625",
-      "name": "revision 0.401",
+      "detail": "0.4019927978515625",
+      "name": "revision 0.402",
       "ok": true
     },
     {
-      "detail": "['Damonic-0.401-alpha-Bold']",
+      "detail": "['Damonic-0.402-alpha-Bold']",
       "name": "unique ID identifies Damonic style",
       "ok": true
     },
@@ -257,12 +257,12 @@
       "ok": true
     },
     {
-      "detail": "0.4010009765625",
-      "name": "revision 0.401",
+      "detail": "0.4019927978515625",
+      "name": "revision 0.402",
       "ok": true
     },
     {
-      "detail": "['Damonic-0.401-alpha-BoldItalic']",
+      "detail": "['Damonic-0.402-alpha-BoldItalic']",
       "name": "unique ID identifies Damonic style",
       "ok": true
     },

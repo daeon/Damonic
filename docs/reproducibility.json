@@ -1,92 +1,92 @@
 {
-  "version": "0.4.1-alpha",
+  "version": "0.4.2-alpha",
   "same_directory_rebuild": true,
   "clean_directory_build": false,
   "checks": [
     {
-      "file": "Damonic-Bold.ttf",
+      "file": "Damonic-Regular.woff2",
       "identical": true,
-      "sha256": "dcb08108a5474149329420ba073fc0f48abaa4b5b9248658c30a3862aa7dc838"
-    },
-    {
-      "file": "Damonic-Bold.woff2",
-      "identical": true,
-      "sha256": "eb3ef6c3633b310f235056546bb8105b2485692b693beaf8226f3a64ca52aa39"
-    },
-    {
-      "file": "Damonic-BoldItalic.ttf",
-      "identical": true,
-      "sha256": "a741901e9097aeb7ff00290c8206bb5a79104b61ca277d69da6f82e257832bd9"
+      "sha256": "6b8578781fab4b6cc92f4af349079bc54dcd2aef1e0808e752c10e54f51dc575"
     },
     {
       "file": "Damonic-BoldItalic.woff2",
       "identical": true,
-      "sha256": "0a22cad197167d5a442fb0de940eb506235ef1022fa04df4139d7a521b582dce"
-    },
-    {
-      "file": "Damonic-Italic.ttf",
-      "identical": true,
-      "sha256": "2e4b07aeb23bdf7783c7b758265cc2f86a91d714cc6bbf134a4af87c950b7310"
-    },
-    {
-      "file": "Damonic-Italic.woff2",
-      "identical": true,
-      "sha256": "7546d5b5d1abbf2870610e9cf630e83231e1754166238f6d07564348638d7303"
-    },
-    {
-      "file": "Damonic-Regular.ttf",
-      "identical": true,
-      "sha256": "8e9b81e6e00fc76abde5bd1861c9562c189fae21f3efd2c0324fad4a123d45fa"
-    },
-    {
-      "file": "Damonic-Regular.woff2",
-      "identical": true,
-      "sha256": "d08565b4789f1238ee2d0e53b996992831bee3ea35d1719c56ed6f7fef90c65b"
-    },
-    {
-      "file": "Damonic.ttc",
-      "identical": true,
-      "sha256": "9e05033a853902245cb21eb3e6bc96d970d39c29c7f3b94f3152f142931b3903"
-    },
-    {
-      "file": "DamonicNerdFontMono-Bold.ttf",
-      "identical": true,
-      "sha256": "17776986c61864d8bf504a2613b884ba69f47829512013bd40415eec24c6f185"
-    },
-    {
-      "file": "DamonicNerdFontMono-Bold.woff2",
-      "identical": true,
-      "sha256": "08e87a828e46d2d78c8df9406439355976a9d9cd1809b00ceaef2915c8290254"
-    },
-    {
-      "file": "DamonicNerdFontMono-BoldItalic.ttf",
-      "identical": true,
-      "sha256": "024eaf6981c021083a53f7c4de90ff405a5c3c89799fadd1654b22b2316f2b1f"
-    },
-    {
-      "file": "DamonicNerdFontMono-BoldItalic.woff2",
-      "identical": true,
-      "sha256": "68bed9430cc4ce10a854765c0b6fb587b18f29bf049dce054c7fcf39099c303a"
-    },
-    {
-      "file": "DamonicNerdFontMono-Italic.ttf",
-      "identical": true,
-      "sha256": "bcb3739959718a5508ca04d4e7f016db6e7eb38a09ef366168f455dc997b506e"
-    },
-    {
-      "file": "DamonicNerdFontMono-Italic.woff2",
-      "identical": true,
-      "sha256": "ed1cf5e3300a8975629fb73b14af1c23737d8aa89f7fbbfb6b210e6fe583ede3"
+      "sha256": "01d994ab424d319d5b3e347ea845c3a0c2d6648d34a47d4498bfbe0a81567cf9"
     },
     {
       "file": "DamonicNerdFontMono-Regular.ttf",
       "identical": true,
-      "sha256": "3d6ce8459bb72ce408eb276e7c874f5cbbfa9204b9610ac10c2d9a3e23706d3b"
+      "sha256": "c1094ede83b4ed3d8fb99b0644d60e2b7a78fd3a8b5a03cbc506ec08e9ae582b"
+    },
+    {
+      "file": "DamonicNerdFontMono-Italic.woff2",
+      "identical": true,
+      "sha256": "aa415f24893797469c28b5b191ad36fd688161a182563654305bb2aff43f70d1"
+    },
+    {
+      "file": "DamonicNerdFontMono-Bold.woff2",
+      "identical": true,
+      "sha256": "c0ca6e55e26d5cf8075cbeee15901b258582e50787c780b94133e0b506164737"
+    },
+    {
+      "file": "DamonicNerdFontMono-Italic.ttf",
+      "identical": true,
+      "sha256": "c9b8a7ad99d01af0542a48843acbd4a9d1dea750f136dc3e0374ec967a2583a4"
     },
     {
       "file": "DamonicNerdFontMono-Regular.woff2",
       "identical": true,
-      "sha256": "f6c46d3fa8a20a03b8c08755d78f1610333fd7b6f4e039e4bc38c5267be79eb1"
+      "sha256": "1e9987206784f3d938a544fcc77bc9f30c1438bb97de8cbfcfcdab902b0e8509"
+    },
+    {
+      "file": "DamonicNerdFontMono-BoldItalic.ttf",
+      "identical": true,
+      "sha256": "54ea78c89e360767c976de97f512f18fd82b091a33fad69ed94a733cb1d3758e"
+    },
+    {
+      "file": "Damonic-Italic.ttf",
+      "identical": true,
+      "sha256": "f3d0ecc31febc454148f777d7bf745daacdb90902970dd793980d6b02b1506bc"
+    },
+    {
+      "file": "DamonicNerdFontMono-BoldItalic.woff2",
+      "identical": true,
+      "sha256": "d3a7956d50ec80b559b8294e68b98e96693c59f4f30e9c78046c17e89d19926a"
+    },
+    {
+      "file": "Damonic-Bold.ttf",
+      "identical": true,
+      "sha256": "f72ef928f8a77e6f1a5e933b69a03a6a428347f5776632b9aaee22634ef876d3"
+    },
+    {
+      "file": "Damonic-Italic.woff2",
+      "identical": true,
+      "sha256": "db507b3c8157b63dee2e4d40cc955ba91c3bac507bc7c25711947632fe78a0bc"
+    },
+    {
+      "file": "Damonic-Bold.woff2",
+      "identical": true,
+      "sha256": "5b32e47b0f43556d10745aa7afd52bf184275f7420b761d7fca2641eac70a6c7"
+    },
+    {
+      "file": "DamonicNerdFontMono-Bold.ttf",
+      "identical": true,
+      "sha256": "02178dafd31afa009957a161df0c45cde6d718b7e0cb9cf94ad055d42f3062ce"
+    },
+    {
+      "file": "Damonic.ttc",
+      "identical": true,
+      "sha256": "6191f3fccd95d9a166c4a6c64a8289d87bf2e95b46592067da249fac4b74db8b"
+    },
+    {
+      "file": "Damonic-BoldItalic.ttf",
+      "identical": true,
+      "sha256": "a6af7fc8c24b381e839d7151c701fa3662e5ad332ff36469df087286bcc9110d"
+    },
+    {
+      "file": "Damonic-Regular.ttf",
+      "identical": true,
+      "sha256": "c3ad2d878b3a3eb4a2f01b53574efaabf5ebeed6821562eb7619a3ab7963c57f"
     }
   ]
 }

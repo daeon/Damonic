@@ -6,15 +6,15 @@
 
 An original open-source coding typeface with four styles, a complete Nerd Fonts Mono edition, and one eight-face collection.
 
-**[Download the free alpha](https://github.com/daeon/Damonic/releases/tag/v0.4.1-alpha)** · [Explore the marketing kit](marketing/README.md) · [View the specimen](marketing/assets/damonic-specimen.svg)
+**[Download the free alpha](https://github.com/daeon/Damonic/releases/tag/v0.4.2-alpha)** · [Explore the marketing kit](marketing/README.md) · [View the specimen](marketing/assets/damonic-specimen.svg)
 
 - **Your editor, your style:** Regular, Italic, Bold and Bold Italic.
 - **Your terminal, with icons:** complete Nerd Fonts 3.5.1 mappings in the Mono edition.
 - **Your setup, your choice:** optional operator ligatures, dotted zero and simple lowercase l.
 
-> **Alpha 0.4.1:** ready for hands-on evaluation. Native-platform testing, hinting review and final optical polish remain before 1.0.
+> **Alpha 0.4.2:** ready for hands-on evaluation. Native-platform testing, hinting review and final optical polish remain before 1.0.
 
-An original humanist monospace for coding and terminal work. **0.4.1 Alpha** develops the Bearing Mono 0.3.4 design under its new name, Damonic. Fira Code, Source Code Pro and Consolas informed the brief; their outlines were not used. This optical revision refines the narrow-letter rhythm; the original 0.4.0 engineering release preserved the 0.3.4 ASCII drawings.
+An original humanist monospace for coding and terminal work. **0.4.2 Alpha** develops the Bearing Mono 0.3.4 design under its new name, Damonic. Fira Code, Source Code Pro and Consolas informed the brief; their outlines were not used. The selected M baseline is retained, with a small increase to Regular m stem weight. Bold and italic outlines retain the 0.4.1 drawings.
 
 ## Install
 

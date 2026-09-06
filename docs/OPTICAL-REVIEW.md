@@ -1,3 +1,9 @@
+# Current direction — M selected
+
+Damon selected M (the 0.4.1 baseline). The broader K/P pilots are not adopted. Version 0.4.2 makes only a restrained Regular m stem adjustment; see [the M decision record](m-selected/README.md) and its frozen comparison inputs.
+
+---
+
 # Damonic 0.4.1 optical review
 
 Three Luna agents assessed narrow-letter rhythm, bowl/curve quality, and proof rendering. The integrated changes were reviewed using actual TTF rasterizations in Pillow/FreeType. This is a restrained alpha revision, not an expert certification or native-platform test.

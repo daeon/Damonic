@@ -1,6 +1,6 @@
-# Verification — 0.4.1 Alpha
+# Verification — 0.4.2 Alpha
 
-The local independent harness passes 86 checks across the four base fonts, four Nerd fonts and eight TTC faces. It verifies Latin coverage, metrics, shaping, stacked accents, symbol coverage and cell containment, family/style names, and matching TTC/TTF behavior. Commands: `python tests/verify.py` and `python tests/soft_dots.py` (both pass). The old exact-ASCII-baseline check is intentionally not applied to this optical revision; `optical-diff.json` records changed outlines and confirms unchanged advances and character coverage.
+The local independent harness passes 86 checks across the four base fonts, four Nerd fonts and eight TTC faces. It verifies Latin coverage, metrics, shaping, stacked accents, symbol coverage and cell containment, family/style names, and matching TTC/TTF behavior. Commands: `python tests/verify.py` and `python tests/soft_dots.py` (both pass). An independent comparison against the selected M baseline confirms that only Regular m changes in both base and Nerd families; all other mapped outlines, character coverage and advances remain unchanged. See `optical-diff.json`.
 
 All eight TTF files pass OpenType Sanitizer 9.2.0 with no warnings. See `ots-report.json`.
 
