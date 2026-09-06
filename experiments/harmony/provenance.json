@@ -1,0 +1,35 @@
+{
+  "baseline_commit": "b5c00978b6da695ba38511c7edc4c7af676841f4",
+  "fonts": [
+    {
+      "file": "baseline-BoldItalic.ttf",
+      "sha256": "a741901e9097aeb7ff00290c8206bb5a79104b61ca277d69da6f82e257832bd9",
+      "sanitizer": "pass"
+    },
+    {
+      "file": "baseline-Regular.ttf",
+      "sha256": "8e9b81e6e00fc76abde5bd1861c9562c189fae21f3efd2c0324fad4a123d45fa",
+      "sanitizer": "pass"
+    },
+    {
+      "file": "construction-BoldItalic.ttf",
+      "sha256": "d2f5d04be7313d2995dbe26860dc19091052a8ae82a272df41f8ec004b4dab8f",
+      "sanitizer": "pass"
+    },
+    {
+      "file": "construction-Regular.ttf",
+      "sha256": "b7681843a3ad5762ef3d53a8d7c5b38f22b1669b024b82117d567ffcaa5f7760",
+      "sanitizer": "pass"
+    },
+    {
+      "file": "spacing-BoldItalic.ttf",
+      "sha256": "d4ca7a1f1afc07d0b9a612612cf49b304f001e0dc3522554df1c0d7eb98fe288",
+      "sanitizer": "pass"
+    },
+    {
+      "file": "spacing-Regular.ttf",
+      "sha256": "61f8db3ce17ff0fc477d48781ebd91755eabd2900a7989e63a7e37c9332c7c80",
+      "sanitizer": "pass"
+    }
+  ]
+}

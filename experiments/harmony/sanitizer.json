@@ -1,0 +1,22 @@
+[
+  {
+    "file": "spacing-Regular.ttf",
+    "returncode": 0,
+    "output": "File sanitized successfully!\n"
+  },
+  {
+    "file": "spacing-BoldItalic.ttf",
+    "returncode": 0,
+    "output": "File sanitized successfully!\n"
+  },
+  {
+    "file": "construction-Regular.ttf",
+    "returncode": 0,
+    "output": "File sanitized successfully!\n"
+  },
+  {
+    "file": "construction-BoldItalic.ttf",
+    "returncode": 0,
+    "output": "File sanitized successfully!\n"
+  }
+]
