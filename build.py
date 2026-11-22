@@ -135,7 +135,10 @@ def outline(specs, weight=78, italic=False, thin=1):
   # Elliptical expansion: vertical strokes remain full weight; horizontal
   # strokes are 88% as thick. Coordinates restore after expansion.
   p=p.transform(1,0,0,1/.88,0,0)
-  p.stroke(weight*thin*(1.12 if spec=="M176 131 L424 579" else 1),pathops.LineCap.BUTT_CAP,pathops.LineJoin.ROUND_JOIN,4)
+  # Let the Bold zero rim carry the weight: a lighter slash preserves both
+  # small counters without changing the slash direction, ends or cell width.
+  zero_slash_scale=(.82 if weight >= 100 else 1.12) if spec=="M176 131 L424 579" else 1
+  p.stroke(weight*thin*zero_slash_scale,pathops.LineCap.BUTT_CAP,pathops.LineJoin.ROUND_JOIN,4)
   p=p.transform(1,0,0,.88,0,0)
   p.convertConicsToQuads(0.25)
   result=pathops.op(result,p,pathops.PathOp.UNION)
