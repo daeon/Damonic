@@ -233,11 +233,17 @@ def build(style):
  for cp in range(0xA0,0x180):
   decomp=unicodedata.normalize('NFD',chr(cp))
   if len(decomp)!=2 or ord(decomp[0]) not in paths or ord(decomp[1]) not in ACCENTS:continue
-  base,ac=decomp; bp=paths[0x131] if base=='i' else paths[ord(base)]
+  base,ac=decomp
+  # Ogonek sits below i, so its encoded form retains the native dot.
+  bp=paths[0x131] if base=='i' and cp!=0x12F else paths[ord(base)]
   ap=outline(ACCENTS[ord(ac)],w*.84,ital)
   if base.isupper() and ord(ac)!=0x327 and ord(ac)!=0x328:ap=ap.transform(1,0,0,1,0,170)
   p=pathops.op(bp,ap,pathops.PathOp.UNION);nm=name(cp)
   glyphs[nm]=glyph(p);paths[cp]=p;cmap[cp]=nm;metrics[nm]=(600,0)
+  if cp==0x12F:
+   # ccmp uses the original dotless form when an above mark follows.
+   alt='uni012F.dotless'
+   glyphs[alt]=glyph(pathops.op(paths[0x131],ap,pathops.PathOp.UNION));metrics[alt]=(600,0)
  for ac,spec in ACCENTS.items():
   nm=name(ac);glyphs[nm]=glyph(outline(spec,w*.84,ital).transform(1,0,0,1,-600,0));cmap[ac]=nm;metrics[nm]=(0,-600)
  # Explicit useful non-ASCII shapes, original geometry.

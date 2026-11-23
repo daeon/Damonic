@@ -17,16 +17,21 @@ def feature_text(accents, name, cmap, glyphs):
     fea += '  lookupflag UseMarkFilteringSet @TOP;\n'
     fea += f'  sub {name(ord("i"))}\' @TOP by {name(0x131)};\n'
     fea += f'  sub {name(ord("j"))}\' @TOP by {name(0x237)};\n'
+    fea += "  sub uni012F' @TOP by uni012F.dotless;\n"
     fea += ' } soft_dot_suppression;\n'
     fea += '} ccmp;\n'
     fea += 'feature mark {\n'
+    def base_anchors(nm, uppercase=False):
+        g=glyphs[nm]
+        y=max(750 if uppercase else 580, getattr(g,'yMax',0)+50)
+        bottom=min(0,getattr(g,'yMin',0)-30)
+        return f' pos base {nm} <anchor 300 {y}> mark @TOP <anchor 300 {bottom}> mark @BOTTOM;\n'
+
     for cp,nm in sorted(cmap.items()):
-        cat=unicodedata.category(chr(cp))
-        if cat.startswith('L'):
-            g=glyphs[nm]
-            y=max(750 if chr(cp).isupper() else 580, getattr(g,'yMax',0)+50)
-            bottom=min(0,getattr(g,'yMin',0)-30)
-            fea += f' pos base {nm} <anchor 300 {y}> mark @TOP <anchor 300 {bottom}> mark @BOTTOM;\n'
+        if unicodedata.category(chr(cp)).startswith('L'):
+            fea += base_anchors(nm, chr(cp).isupper())
+    # This contextual alternate has no cmap entry but still receives both anchors.
+    fea += base_anchors('uni012F.dotless')
     fea += '} mark;\nfeature mkmk {\n'
     for ac in accents:
         if ac not in (0x327,0x328):
