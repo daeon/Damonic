@@ -268,7 +268,8 @@ def build(style):
   0x20AC:[*D['C'],'M53 437 L404 437','M53 276 L365 276'],
   0x2190:['M75 280 L525 280','M271 482 L69 280 L271 78'],0x2192:['M75 280 L525 280','M329 482 L531 280 L329 78'],
   0x2191:['M300 36 L300 660','M103 452 L300 665 L497 452'],0x2193:['M300 674 L300 50','M103 258 L300 45 L497 258'],
-  0x2212:D['-'],0x2215:D['/'],0x2260:[*D['='],'M190 29 L410 532'],0x2264:[*D['<'],'M98 -69 L502 -69'],0x2265:[*D['>'],'M98 -69 L502 -69'],
+  # The mathematical minus pairs with the horizontal stroke of plus, not the text hyphen.
+  0x2212:(ITALIC.get('+', D['+']) if ital else D['+'])[:1],0x2215:D['/'],0x2260:[*D['='],'M190 29 L410 532'],0x2264:[*D['<'],'M98 -69 L502 -69'],0x2265:[*D['>'],'M98 -69 L502 -69'],
   0x221E:['M300 280 C161 508 69 450 69 280 C69 110 161 52 300 280 C439 508 531 450 531 280 C531 110 439 52 300 280 Z'],
   0x2713:['M85 276 L236 98 L516 595'],0x2717:['M130 540 L470 20','M470 540 L130 20'],  0x0132:[*D['I'],*D['J']],0x0133:[*D['i'],*D['j']],0x0149:[*D["n"],"M190 735 L300 600"],
   0x0152:[*D['O'],*D['E']],0x0153:[*D['o'],*D['e']],0x017F:D['s'],
@@ -276,7 +277,8 @@ def build(style):
  }
  # Ellipsis and bullets balanced using reduced strokes.
  for cp,spec in extras.items():
-  p=outline(spec,w,ital);nm=name(cp);glyphs[nm]=glyph(p);cmap[cp]=nm;metrics[nm]=(600,0)
+  thin=1.14 if ital and cp==0x2212 else 1  # Match the existing italic plus crossbar.
+  p=outline(spec,w,ital,thin);nm=name(cp);glyphs[nm]=glyph(p);cmap[cp]=nm;metrics[nm]=(600,0)
  # Semantically accurate small forms and paired-letter compositions.
  from latin_refine import refinements
  for cp,p in refinements(D,outline,w,ital,pathops).items():

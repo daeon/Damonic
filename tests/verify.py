@@ -29,6 +29,20 @@ def shape(path, text, features=None):
     hb.shape(font, buf, features or {})
     return [(i.codepoint, i.cluster, p.x_advance, p.x_offset, p.y_offset) for i,p in zip(buf.glyph_infos, buf.glyph_positions)]
 
+def check_math_minus(font, cmap):
+    # The four minus vertices must match the endpoints of the plus crossbar.
+    # Keep punctuation separate even though these operators share a text cell.
+    cps=(0x002B,0x002D,0x2010,0x2013,0x2212)
+    if not all(cp in cmap for cp in cps):
+        return result("math minus matches plus crossbar",False,"missing math or punctuation mapping")
+    plus,ascii_hyphen,hyphen,en,minus=(font["glyf"][cmap[cp]] for cp in cps)
+    pts=set(minus.coordinates)
+    wide=lambda g: g.xMax-g.xMin
+    ok=(minus.numberOfContours==1 and len(pts)==4 and pts <= set(plus.coordinates)
+        and wide(minus)>max(wide(ascii_hyphen),wide(hyphen)) and wide(minus)<wide(en)
+        and all(font["hmtx"][cmap[cp]][0]==600 for cp in cps))
+    return result("math minus matches plus crossbar",ok,sorted(pts))
+
 def check_font(path):
     out = []; font = TTFont(path, recalcBBoxes=False); cmap = font.getBestCmap()
     style = path.stem.removeprefix("Damonic-")
@@ -59,6 +73,7 @@ def check_font(path):
         want=0 if unicodedata.category(chr(cp)) in ("Mn","Me") else 600
         if font["hmtx"][gn][0] != want: badwidth.append(f"U+{cp:04X}={font['hmtx'][gn][0]}")
     out.append(result("mapped advances 600 / marks 0", not badwidth, badwidth[:20]))
+    out.append(check_math_minus(font,cmap))
     # Each feature must cause a substantive substitution, and dlig must collapse a pair.
     for tag, text in (("ss01","0"),("ss02","l"),("dlig","->")):
         off=shape(path,text,{tag:False}); on=shape(path,text,{tag:True})
@@ -126,6 +141,7 @@ def nerd_checks(path, reference=None):
     checks=[result("Nerd Font full symbol cmap", cmap_ok, detail), result("Nerd mapped glyphs nonempty", not empty, empty[:20]), result("Nerd bounds 0..600 / -250..1000", not bounds, bounds[:20]), result("Nerd ASCII retention", all(cp in cmap for cp in range(0x20,0x7F)), "")]
     bad=[gn for cp,gn in cmap.items() if unicodedata.category(chr(cp)) not in ("Mn","Me") and f["hmtx"][gn][0] != 600]
     checks.append(result("Nerd mapped advances 600", not bad, bad[:20]))
+    checks.append(check_math_minus(f,cmap))
     return checks
 
 def main():
