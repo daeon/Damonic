@@ -235,6 +235,12 @@ def build(style):
   if len(decomp)!=2 or ord(decomp[0]) not in paths or ord(decomp[1]) not in ACCENTS:continue
   base,ac=decomp; bp=paths[0x131] if base=='i' else paths[ord(base)]
   ap=outline(ACCENTS[ord(ac)],w*.84,ital)
+  if cp==0x123:
+   # Latvian lowercase g uses a rotated comma above the bowl; Ģ stays below.
+   ap=outline(D[','],w*.84).transform(-.82,0,0,-.82,0,0)
+   if ital:ap=ap.transform(1,0,math.tan(math.radians(9)),1,0,0)
+   x0,y0,x1,_=ap.bounds
+   ap=ap.transform(1,0,0,1,(352 if ital else 307)-(x0+x1)/2,bp.bounds[3]+64-y0)
   if base.isupper() and ord(ac)!=0x327 and ord(ac)!=0x328:ap=ap.transform(1,0,0,1,0,170)
   p=pathops.op(bp,ap,pathops.PathOp.UNION);nm=name(cp)
   glyphs[nm]=glyph(p);paths[cp]=p;cmap[cp]=nm;metrics[nm]=(600,0)

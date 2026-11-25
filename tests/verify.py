@@ -23,11 +23,34 @@ def result(name, ok, detail=""):
 def names(font, nid):
     return {x.toUnicode() for x in font["name"].names if x.nameID == nid}
 
-def shape(path, text, features=None):
+def shape(path, text, features=None, language=None):
     data = Path(path).read_bytes(); face = hb.Face(data); font = hb.Font(face)
     buf = hb.Buffer(); buf.add_str(text); buf.guess_segment_properties()
+    if language is not None: buf.language = language
     hb.shape(font, buf, features or {})
     return [(i.codepoint, i.cluster, p.x_advance, p.x_offset, p.y_offset) for i,p in zip(buf.glyph_infos, buf.glyph_positions)]
+
+def check_latvian_g(path, font, cmap):
+    base,accented=cmap.get(0x0067),cmap.get(0x0123)
+    if not (base and accented):
+        return result("Latvian lowercase g keeps a separated upper comma",False,"missing g or g-cedilla")
+    def contours(g):
+        points, ends, flags=font["glyf"][g].getCoordinates(font["glyf"])
+        starts=[0]+[end+1 for end in ends[:-1]]
+        return {tuple(sorted((x,y,int(f)&1) for (x,y),f in zip(points[a:b+1],flags[a:b+1])))
+                for a,b in zip(starts,ends)}
+    base_contours=contours(base)
+    accented_contours=contours(accented)
+    mark=accented_contours-base_contours
+    gap=min((y for c in mark for _,y,_ in c),default=0)-font["glyf"][base].yMax
+    widths=[font["hmtx"][g][0] for g in (base,accented)]
+    gid=font.getGlyphID(accented)
+    nfc=shape(path,"\u0123",language="lv")
+    nfd=shape(path,"g\u0327",language="lv")
+    ok=(base_contours<accented_contours and len(mark)==1 and gap>=40
+        and widths==[600,600] and nfc==nfd==[(gid,0,600,0,0)])
+    return result("Latvian lowercase g keeps a separated upper comma",ok,
+                  {"gap":gap,"advances":widths,"NFC":nfc,"NFD":nfd})
 
 def check_font(path):
     out = []; font = TTFont(path, recalcBBoxes=False); cmap = font.getBestCmap()
@@ -59,6 +82,7 @@ def check_font(path):
         want=0 if unicodedata.category(chr(cp)) in ("Mn","Me") else 600
         if font["hmtx"][gn][0] != want: badwidth.append(f"U+{cp:04X}={font['hmtx'][gn][0]}")
     out.append(result("mapped advances 600 / marks 0", not badwidth, badwidth[:20]))
+    out.append(check_latvian_g(path,font,cmap))
     # Each feature must cause a substantive substitution, and dlig must collapse a pair.
     for tag, text in (("ss01","0"),("ss02","l"),("dlig","->")):
         off=shape(path,text,{tag:False}); on=shape(path,text,{tag:True})
@@ -126,6 +150,7 @@ def nerd_checks(path, reference=None):
     checks=[result("Nerd Font full symbol cmap", cmap_ok, detail), result("Nerd mapped glyphs nonempty", not empty, empty[:20]), result("Nerd bounds 0..600 / -250..1000", not bounds, bounds[:20]), result("Nerd ASCII retention", all(cp in cmap for cp in range(0x20,0x7F)), "")]
     bad=[gn for cp,gn in cmap.items() if unicodedata.category(chr(cp)) not in ("Mn","Me") and f["hmtx"][gn][0] != 600]
     checks.append(result("Nerd mapped advances 600", not bad, bad[:20]))
+    checks.append(check_latvian_g(path,f,cmap))
     return checks
 
 def main():
