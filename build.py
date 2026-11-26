@@ -164,40 +164,27 @@ apply(D,ITALIC)
 
 ACCENTS={0x301:['M232 592 L385 745'],0x300:['M215 745 L368 592'],0x302:['M172 597 L300 730 L428 597'],0x303:['M140 625 C190 695 238 695 300 651 C362 607 410 607 460 677'],0x308:['M208 628 L208 706','M392 628 L392 706'],0x30A:['M300 739 C359 739 377 708 377 671 C377 634 359 605 300 605 C241 605 223 634 223 671 C223 708 241 739 300 739 Z'],0x327:['M304 -34 L265 -101 C370 -101 392 -184 302 -204 L220 -204'],0x304:['M161 661 L439 661'],0x306:['M160 727 C181 594 419 594 440 727'],0x30C:['M172 730 L300 597 L428 730'],0x307:['M300 628 L300 706'],0x30B:['M186 599 L304 748','M336 599 L454 748'],0x328:['M385 0 C256 -85 272 -181 385 -181 L432 -181']}
 
-def core_outline(c,w,m_ratio=None):
- """Independent filled shoulder contours with thinner entries and open joins."""
- result=pathops.Path()
- def add(spec):
-  nonlocal result
-  result=pathops.op(result,path_for(spec),pathops.PathOp.UNION)
- def stem(x,top,width):
-  h=width/2;add(f'M{x-h} 0 L{x-h} {top} L{x+h} {top} L{x+h} 0 Z')
- if c in 'nh':
-  stem(122,735 if c=='h' else 530,w);left=122+w/2;right=476+w/2;inside=476-w/2
-  add(f'M{left} 418 C210 502 258 536 320 536 C446 536 {right} 471 {right} 324 L{right} 0 L{inside} 0 L{inside} 324 C{inside} 422 399 {536-w*.88} 320 {536-w*.88} C251 {536-w*.88} 199 418 {left} 348 Z')
- elif c=='r':
-  stem(216,530,w);left=216+w/2;inner=538-w*.88
-  add(f'M{left} 424 C267 502 307 538 352 538 C443 538 501 524 550 505 L517 445 C474 458 422 {inner} 352 {inner} C305 {inner} 262 418 {left} 338 Z')
- else:
-  # The two m arches get a lighter stem and a broader, flatter crown so their
-  # shared joins do not darken or pinch at small sizes.
-  mw=w*(m_ratio if m_ratio is not None else (.78 if w < 100 else .74));stem(80,530,mw)
-  for leftcenter,rightcenter,peak in [(80,300,204),(300,520,424)]:
-   left=leftcenter+mw/2;right=rightcenter+mw/2;inside=rightcenter-mw/2;inner=534-w*.76
-   add(f'M{left} 418 C{left+29} 499 {peak-34} 534 {peak} 534 C{right-18} 534 {right} 470 {right} 347 L{right} 0 L{inside} 0 L{inside} 347 C{inside} 428 {peak+32} {inner} {peak} {inner} C{peak-36} {inner} {left+12} 414 {left} 349 Z')
- return result
-
-
 from latin import LATIN_EXTRA
 from marks import feature_text
+from text_rhythm import upright_specs, shoulder_specs
 def build(style):
+ return build_face(style,D)
+
+def build_face(style,D):
  bold='Bold' in style;ital='Italic' in style;w=108 if bold else 84
+ if not ital: D={**D, **upright_specs(w)}
  paths={};glyphs={};cmap={};metrics={}
  for c,spec in D.items():
   cp=ord(c);nm=name(cp)
   # Crowded shapes need optical stroke reductions rather than equal mechanical weight.
   thin=(1.14 if ital and c in ".,:;!?\'\"`-_=+<>~^*/\\|()[]{}" else (.85 if c in 'mwMW%@&' else (.92 if c in '*#' else 1)))
-  paths[cp]=optical_bowl(c,w,path_for,pathops) if not ital and c in 'bdpq' else core_outline(c,w) if not ital and c in 'nhrm' else outline(ITALIC.get(c,spec) if ital else spec,w,ital,thin)
+  if not ital and c in 'nhrm':
+   joined=pathops.Path()
+   for part in shoulder_specs(c,w):
+    joined=pathops.op(joined,path_for(part),pathops.PathOp.UNION)
+   paths[cp]=joined
+  else:
+   paths[cp]=optical_bowl(c,w,path_for,pathops) if not ital and c in 'bdpq' else outline(ITALIC.get(c,spec) if ital else spec,w,ital,thin)
   glyphs[nm]=glyph(paths[cp]);cmap[cp]=nm;metrics[nm]=(600,0)
  # Additional original Latin letters, preserving fixed-width proportions.
  additional={
