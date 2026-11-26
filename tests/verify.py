@@ -59,6 +59,17 @@ def check_font(path):
         want=0 if unicodedata.category(chr(cp)) in ("Mn","Me") else 600
         if font["hmtx"][gn][0] != want: badwidth.append(f"U+{cp:04X}={font['hmtx'][gn][0]}")
     out.append(result("mapped advances 600 / marks 0", not badwidth, badwidth[:20]))
+    # Square brackets share the braces' centerline but have shorter vertical stems.
+    delimiters = {}
+    for ch in "[]{}":
+        glyph = font["glyf"][cmap[ord(ch)]]
+        delimiters[ch] = (glyph.yMin, glyph.yMax)
+    bracket_rhythm = all(
+        lo == brace_lo + 60 and hi == brace_hi - 60
+        for (lo, hi), (brace_lo, brace_hi) in
+        ((delimiters[bracket], delimiters[brace]) for bracket, brace in zip("[]", "{}"))
+    )
+    out.append(result("square brackets shorter than braces by 60 units per end", bracket_rhythm, delimiters))
     # Each feature must cause a substantive substitution, and dlig must collapse a pair.
     for tag, text in (("ss01","0"),("ss02","l"),("dlig","->")):
         off=shape(path,text,{tag:False}); on=shape(path,text,{tag:True})
